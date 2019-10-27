@@ -1,6 +1,7 @@
 extends Controller
 class_name PlayerController
 
+onready var parent = get_parent()
 
 
 func _init() -> void:
@@ -8,8 +9,7 @@ func _init() -> void:
   
   
 func _ready() -> void:
-  # get parent object we are controlling and snap to grid
-  var parent = get_parent()
+  # snap parent object to grid
   parent.position = parent.position.snapped(Vector2(TILE_SIZE, TILE_SIZE))
 
 
@@ -23,7 +23,7 @@ func input() -> void:
   direction.x = -int(left) + int(right)
 
 
-# TODO: Implement state machine if movement gets to complicated
+# TODO: Implement state machine if movement gets to complex
 func _physics_process(delta : float) -> void:
   input()
-  movement(get_parent(), delta)
+  movement(parent, delta)
