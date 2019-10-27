@@ -17,7 +17,7 @@ export var TILE_SIZE : int
 func vector_direction(vector : Vector2) -> String:
   var direction_vectors : Array = directions.values()
   var direction_names : Array = directions.keys()
-  var new_direction : int = direction_vectors.find(direction)
+  var new_direction : int = direction_vectors.find(vector)
 
   if new_direction == -1:
     return ''
