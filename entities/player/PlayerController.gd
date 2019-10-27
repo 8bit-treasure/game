@@ -1,15 +1,12 @@
 extends Controller
 class_name PlayerController
 
-# var tile_size = 64
-# var last_position = Vector2()
-# var target_position = Vector2()
 
 
 func _init() -> void:
   TILE_SIZE = 32
-
-
+  
+  
 func _ready() -> void:
   # get parent object we are controlling and snap to grid
   var parent = get_parent()

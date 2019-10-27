@@ -10,6 +10,9 @@ extents = Vector2( 32, 32 )
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
 [node name="PlayerController" type="Node2D" parent="."]
 script = ExtResource( 3 )
 TILE_SIZE = 64
