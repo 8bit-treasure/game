@@ -8,14 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Controller",
+"language": "GDScript",
+"path": "res://engine/Controller.gd"
+}, {
+"base": "Controller",
+"class": "PlayerController",
+"language": "GDScript",
+"path": "res://entities/player/PlayerController.gd"
+} ]
 _global_script_class_icons={
-
+"Controller": "",
+"PlayerController": ""
 }
 
 [application]
 
 config/name="TreasureHunter"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
 [input]

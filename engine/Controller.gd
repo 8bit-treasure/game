@@ -1,5 +1,5 @@
-extends KinematicBody2D
-
+extends Node2D
+class_name Controller
 
 const directions : Dictionary = {
   'idle': Vector2(0, 0),
@@ -10,7 +10,7 @@ const directions : Dictionary = {
 }
 
 var direction : Vector2 = directions.idle
-var SPEED : int
+export var TILE_SIZE : int
 
 
 # Takes a Vector2 and returns the string representation of the vector.
@@ -26,6 +26,7 @@ func vector_direction(vector : Vector2) -> String:
 
 
 # Handles the movement of the entity.
-func movement() -> void:
-  var motion : Vector2 = direction.normalized() * SPEED
-  move_and_slide(motion, Vector2(0, 0))
+func movement(host, delta) -> void:
+  var motion : Vector2 = direction * TILE_SIZE
+  host.move_and_slide(motion / delta, Vector2(0, 0))
+  host.position = host.position.snapped(Vector2(TILE_SIZE, TILE_SIZE))
