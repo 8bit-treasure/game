@@ -1,12 +1,17 @@
 extends Area2D
 
+onready var scene_info : Array = self.name.split('_')
+onready var scene_name : String = scene_info[0]
+onready var scene_direction : String = scene_info[1]
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+onready var new_scene : PackedScene = load(str('res://room/', scene_name, '.tscn'))
+
+func _onready() -> void:
+  global.load_direction = scene_direction
 
 
 func _process(delta : float) -> void:
-	for body in get_overlapping_bodies():
-		print(body.name)
-		print(self.name.split('_')[0], self.name.split('_')[1])
+  for body in get_overlapping_bodies():
+    if body.name == 'Player':
+      get_tree().change_scene_to(new_scene)
+      print(scene_info[0], ' ', scene_info[1])
