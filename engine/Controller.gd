@@ -28,8 +28,12 @@ func vector_direction(vector : Vector2) -> String:
 # Handles the movement of the entity.
 func movement(host, delta) -> void:
   var motion : Vector2 = direction * TILE_SIZE
-  host.move_and_slide(motion / delta, Vector2(0, 0))
-  
-  # ensures that we're always snapped, otherwise can end up
-  # up off the grid based on collisions
-  host.position = host.position.snapped(Vector2(TILE_SIZE, TILE_SIZE))
+
+  if direction != directions.idle:
+    host.move_and_slide(motion / delta, Vector2(0, 0))
+
+    # ensures that we're always snapped, otherwise can end up
+    # up off the grid based on collisions
+    host.position = host.position.snapped(Vector2(TILE_SIZE, TILE_SIZE))
+
+

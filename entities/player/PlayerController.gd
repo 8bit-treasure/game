@@ -10,7 +10,7 @@ func _init() -> void:
   
 func _ready() -> void:
   # snap parent object to grid
-  parent.position = parent.position.snapped(Vector2(TILE_SIZE, TILE_SIZE))
+  parent.position = parent.position.snapped(Vector2(TILE_SIZE / 2, TILE_SIZE / 2))
 
 
 func input() -> void:
