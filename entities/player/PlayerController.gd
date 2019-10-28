@@ -5,7 +5,7 @@ onready var parent = get_parent()
 
 
 func _init() -> void:
-  TILE_SIZE = 32
+  TILE_SIZE = 64
   
   
 func _ready() -> void:

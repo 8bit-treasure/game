@@ -34,6 +34,6 @@ func movement(host, delta) -> void:
 
     # ensures that we're always snapped, otherwise can end up
     # up off the grid based on collisions
-    host.position = host.position.snapped(Vector2(TILE_SIZE, TILE_SIZE))
+    host.position = host.position.snapped(Vector2(TILE_SIZE / 2, TILE_SIZE / 2))
 
 
