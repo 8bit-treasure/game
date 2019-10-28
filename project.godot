@@ -33,7 +33,7 @@ config/icon="res://icon.png"
 [display]
 
 window/size/width=1088
-window/size/height=640
+window/size/height=704
 
 [input]
 

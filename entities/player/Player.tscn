@@ -21,7 +21,6 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
-current = true
 __meta__ = {
 "_edit_lock_": true
 }
