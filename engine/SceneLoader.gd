@@ -14,4 +14,6 @@ func _process(delta : float) -> void:
   for body in get_overlapping_bodies():
     if body.name == 'Player':
       get_tree().change_scene_to(new_scene)
+      print('new dir:', scene_direction)
+      global.load_direction = scene_direction
       print(scene_info[0], ' ', scene_info[1])

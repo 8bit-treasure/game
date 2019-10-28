@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tiles/environment/WallTiles.tres" type="TileSet" id=1]
-[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://engine/SceneLoader.tscn" type="PackedScene" id=3]
+[ext_resource path="res://engine/SceneLoader.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=3]
 
 [node name="Room" type="Node2D"]
 
@@ -10,7 +10,7 @@
 anchor_mode = 0
 current = true
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 544, 352 )
 
 [node name="WallMap" type="TileMap" parent="."]
@@ -20,14 +20,14 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="Loaders" type="Node" parent="."]
 
-[node name="VLoading_Up" parent="Loaders" instance=ExtResource( 3 )]
+[node name="VLoading_Up" parent="Loaders" instance=ExtResource( 2 )]
 position = Vector2( 544, -64 )
 
-[node name="HLoading_Left" parent="Loaders" instance=ExtResource( 3 )]
+[node name="HLoading_Left" parent="Loaders" instance=ExtResource( 2 )]
 position = Vector2( -64, 352 )
 
-[node name="HLoading_Right" parent="Loaders" instance=ExtResource( 3 )]
+[node name="HLoading_Right" parent="Loaders" instance=ExtResource( 2 )]
 position = Vector2( 1152, 352 )
 
-[node name="VLoading_Down" parent="Loaders" instance=ExtResource( 3 )]
+[node name="VLoading_Down" parent="Loaders" instance=ExtResource( 2 )]
 position = Vector2( 544, 768 )
