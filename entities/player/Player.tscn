@@ -5,7 +5,7 @@
 [ext_resource path="res://entities/player/PlayerController.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17.2083, 22.1919 )
+extents = Vector2( 8.77713, 12.3616 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "char1_idledown"
