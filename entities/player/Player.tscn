@@ -1,30 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
-[ext_resource path="res://entities/player/assets/temp_chars.png" type="Texture" id=2]
+[ext_resource path="res://entities/player/assets/char_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://entities/player/PlayerController.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.2083, 22.1919 )
 
 [sub_resource type="Animation" id=2]
-resource_name = "idledown"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1 ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "idleleft"
+resource_name = "char1_idledown"
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -39,8 +23,8 @@ tracks/0/keys = {
 "values": [ 13 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "idleright"
+[sub_resource type="Animation" id=3]
+resource_name = "char1_idleleft"
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -52,11 +36,27 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 25 ]
+"values": [ 19 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "char1_idleright"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "idleup"
+resource_name = "char1_idleup"
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -68,11 +68,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 37 ]
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=6]
-resource_name = "walkdown"
+resource_name = "char1_walkdown"
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -85,11 +85,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 1, 0 ]
+"values": [ 14, 13, 12, 13 ]
 }
 
 [sub_resource type="Animation" id=7]
-resource_name = "walkleft"
+resource_name = "char1_walkleft"
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -102,11 +102,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 13, 14, 13, 12 ]
+"values": [ 20, 19, 18, 19 ]
 }
 
 [sub_resource type="Animation" id=8]
-resource_name = "walkright"
+resource_name = "char1_walkright"
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -119,11 +119,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 25, 26, 25, 24 ]
+"values": [ 8, 7, 6, 7 ]
 }
 
 [sub_resource type="Animation" id=9]
-resource_name = "walkup"
+resource_name = "char1_walkup"
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -136,7 +136,139 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 37, 38, 37, 36 ]
+"values": [ 2, 1, 0, 1 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "char2_idledown"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 16 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "char2_idleleft"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 22 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "char2_idleright"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 10 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "char2_idleup"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "char2_walkdown"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 17, 16, 15, 16 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "char2_walkleft"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 23, 22, 21, 22 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "char2_walkright"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 10, 9, 10 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "char2_walkup"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 4, 3, 4 ]
 }
 
 [node name="Player" type="KinematicBody2D"]
@@ -147,9 +279,9 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-vframes = 8
-hframes = 12
-frame = 25
+vframes = 4
+hframes = 6
+frame = 19
 __meta__ = {
 "_edit_lock_": true
 }
@@ -172,11 +304,19 @@ __meta__ = {
 }
 
 [node name="anim" type="AnimationPlayer" parent="."]
-anims/idledown = SubResource( 2 )
-anims/idleleft = SubResource( 3 )
-anims/idleright = SubResource( 4 )
-anims/idleup = SubResource( 5 )
-anims/walkdown = SubResource( 6 )
-anims/walkleft = SubResource( 7 )
-anims/walkright = SubResource( 8 )
-anims/walkup = SubResource( 9 )
+anims/char1_idledown = SubResource( 2 )
+anims/char1_idleleft = SubResource( 3 )
+anims/char1_idleright = SubResource( 4 )
+anims/char1_idleup = SubResource( 5 )
+anims/char1_walkdown = SubResource( 6 )
+anims/char1_walkleft = SubResource( 7 )
+anims/char1_walkright = SubResource( 8 )
+anims/char1_walkup = SubResource( 9 )
+anims/char2_idledown = SubResource( 10 )
+anims/char2_idleleft = SubResource( 11 )
+anims/char2_idleright = SubResource( 12 )
+anims/char2_idleup = SubResource( 13 )
+anims/char2_walkdown = SubResource( 14 )
+anims/char2_walkleft = SubResource( 15 )
+anims/char2_walkright = SubResource( 16 )
+anims/char2_walkup = SubResource( 17 )
