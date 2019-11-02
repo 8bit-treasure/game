@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/8bitOperatorPlus8-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/DraggableItem.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 58
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 88.2486, 8.37495 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.463257
+margin_right = -0.463257
+
+[node name="BG" type="Panel" parent="."]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+margin_left = -3.6817
+margin_top = 1.10803
+margin_right = -2.6817
+margin_bottom = 2.10803
+
+[node name="Title" type="Label" parent="BG"]
+anchor_right = 1.0
+margin_left = -0.632759
+margin_top = 10.0
+margin_right = 0.581909
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 1 )
+text = "Inventory"
+align = 1
+
+[node name="Label" type="Label" parent="BG"]
+margin_left = 136.477
+margin_top = 116.306
+margin_right = 248.477
+margin_bottom = 131.306
+custom_fonts/font = SubResource( 2 )
+text = "Backpack"
+
+[node name="ItemContainer" type="ScrollContainer" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 136.477
+margin_top = 116.306
+margin_right = -553.923
+margin_bottom = -190.894
+mouse_default_cursor_shape = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/ItemContainer"]
+
+[node name="DraggableItem" type="Area2D" parent="BG/ItemContainer/VBoxContainer"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BG/ItemContainer/VBoxContainer/DraggableItem"]
+position = Vector2( 87.4294, 32.0391 )
+shape = SubResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="BG/ItemContainer/VBoxContainer/DraggableItem"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 24.0
+margin_right = 176.0
+margin_bottom = 40.0
+
+[node name="Strength" type="Label" parent="BG"]
+margin_left = 468.392
+margin_top = 193.333
+margin_right = 585.392
+margin_bottom = 208.333
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+custom_fonts/font = SubResource( 2 )
+text = "Strength"
+
+[node name="Encumberence" type="Label" parent="BG"]
+margin_left = 467.129
+margin_top = 230.137
+margin_right = 639.129
+margin_bottom = 245.137
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+custom_fonts/font = SubResource( 2 )
+text = "Encumberence"
+
+[node name="Bodywear" type="Label" parent="BG"]
+margin_left = 466.43
+margin_top = 117.805
+margin_right = 580.43
+margin_bottom = 132.805
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+custom_fonts/font = SubResource( 2 )
+text = "Bodywear"
+
+[node name="Footwear" type="Label" parent="BG"]
+margin_left = 466.987
+margin_top = 153.437
+margin_right = 579.987
+margin_bottom = 168.437
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+custom_fonts/font = SubResource( 2 )
+text = "Footwear"
+[connection signal="input_event" from="BG/ItemContainer/VBoxContainer/DraggableItem" to="BG/ItemContainer/VBoxContainer/DraggableItem" method="_on_DraggableItem_input_event"]
