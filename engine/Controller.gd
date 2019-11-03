@@ -24,7 +24,6 @@ func _ready() -> void:
 
 # handles input for the entity
 func input() -> bool:
-  print(Input)
   var left : bool = Input.is_action_just_pressed("ui_left")
   var right : bool = Input.is_action_just_pressed("ui_right")
   var up : bool = Input.is_action_just_pressed("ui_up")

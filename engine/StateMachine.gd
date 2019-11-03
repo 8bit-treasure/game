@@ -20,7 +20,6 @@ func init() -> void:
   set_active(true)
 
   # add any other state initialization here
-  print('Enabling: ', self.name)
 
 
 func cleanup() -> void:
@@ -28,7 +27,6 @@ func cleanup() -> void:
   set_active(false)
 
   # add any other state cleanup here
-  print('Disabling: ', self.name)
 
 
 func physics_process(delta : float) -> void:
