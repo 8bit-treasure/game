@@ -11,5 +11,5 @@ func cleanup() -> void:
   .cleanup()
 
 
-func physics_process() -> void:
+func physics_process(delta : float) -> void:
   controller.input()

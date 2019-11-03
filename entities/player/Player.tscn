@@ -1,8 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/assets/char_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://entities/player/PlayerController.gd" type="Script" id=3]
+[ext_resource path="res://entities/states/Move.gd" type="Script" id=3]
+[ext_resource path="res://entities/player/StateHandler.gd" type="Script" id=4]
+[ext_resource path="res://entities/states/Idle.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.77713, 12.3616 )
@@ -281,7 +283,7 @@ __meta__ = {
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 6
-frame = 19
+frame = 13
 __meta__ = {
 "_edit_lock_": true
 }
@@ -291,10 +293,6 @@ visible = false
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="PlayerController" type="Node2D" parent="."]
-script = ExtResource( 3 )
-TILE_SIZE = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -320,3 +318,12 @@ anims/char2_walkdown = SubResource( 14 )
 anims/char2_walkleft = SubResource( 15 )
 anims/char2_walkright = SubResource( 16 )
 anims/char2_walkup = SubResource( 17 )
+
+[node name="StateHandler" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Idle" type="Node2D" parent="StateHandler"]
+script = ExtResource( 5 )
+
+[node name="Move" type="Node2D" parent="StateHandler"]
+script = ExtResource( 3 )

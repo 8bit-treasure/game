@@ -12,7 +12,7 @@ const directions : Dictionary = {
   'right': Vector2(1, 0),
 }
 
-var direction : Vector2 = directions.idle setget set_direction, get_direction
+var direction : Vector2 = directions.idle
 var entity : KinematicBody2D
 
 
