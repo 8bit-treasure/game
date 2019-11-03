@@ -5,7 +5,7 @@ var states : Dictionary
 var state : Node2D
 
 
-func _ready():
+func _ready() -> void:
   # TODO: look for a way to handle this
   states = {
     'idle': $Idle,

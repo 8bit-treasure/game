@@ -11,5 +11,6 @@ func cleanup() -> void:
   .cleanup()
 
 
-func physics_process(delta : float) -> void:
-  controller.input()
+func input(event : InputEvent) -> void:
+  if controller.input():
+    controller._update('move')

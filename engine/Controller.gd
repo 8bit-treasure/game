@@ -23,7 +23,8 @@ func _ready() -> void:
 
 
 # handles input for the entity
-func input() -> void:
+func input() -> bool:
+  print(Input)
   var left : bool = Input.is_action_just_pressed("ui_left")
   var right : bool = Input.is_action_just_pressed("ui_right")
   var up : bool = Input.is_action_just_pressed("ui_up")
@@ -32,9 +33,14 @@ func input() -> void:
   direction.y = -int(up) + int(down)
   direction.x = -int(left) + int(right)
 
+  if direction != directions.idle:
+    return true
+  
+  return false
+
 
 # handles the movement of the entity
-func move(entity : KinematicBody2D, delta : float) -> void:
+func move(delta : float) -> void:
   var velocity : Vector2 = direction * TILE_SIZE
 
   if direction != directions.idle:

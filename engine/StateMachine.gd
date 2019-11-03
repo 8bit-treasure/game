@@ -15,18 +15,20 @@ func _ready() -> void:
   controller = get_parent()
 
 
-func init():
+func init() -> void:
   # enable tick processes
   set_active(true)
 
   # add any other state initialization here
+  print('Enabling: ', self.name)
 
 
-func cleanup():
+func cleanup() -> void:
   # disable tick processes
   set_active(false)
 
   # add any other state cleanup here
+  print('Disabling: ', self.name)
 
 
 func physics_process(delta : float) -> void:
@@ -41,7 +43,7 @@ func input(event : InputEvent) -> void:
   pass
 
 
-func set_active(boolean):
+func set_active(boolean : bool) -> void:
   set_physics_process(boolean)
   set_process_input(boolean)
   set_process(boolean)
