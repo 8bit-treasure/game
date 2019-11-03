@@ -1,6 +1,9 @@
 extends Node2D
 class_name Controller
 
+export var TILE_SIZE : int = 64
+var HALF_TILE : int
+
 const directions : Dictionary = {
   'idle': Vector2(0, 0),
   'up': Vector2(0, -1),
@@ -10,10 +13,53 @@ const directions : Dictionary = {
 }
 
 var direction : Vector2 = directions.idle
-export var TILE_SIZE : int
+var entity : KinematicBody2D
 
 
-# Takes a Vector2 and returns the string representation of the vector.
+func _ready() -> void:
+  entity = get_parent()
+  HALF_TILE = TILE_SIZE / 2
+  entity.position = entity.position.snapped(Vector2(HALF_TILE, HALF_TILE))
+
+
+# handles input for the entity
+func input() -> bool:
+  var left : bool = Input.is_action_just_pressed("ui_left")
+  var right : bool = Input.is_action_just_pressed("ui_right")
+  var up : bool = Input.is_action_just_pressed("ui_up")
+  var down : bool = Input.is_action_just_pressed("ui_down")
+
+  direction.y = -int(up) + int(down)
+  direction.x = -int(left) + int(right)
+
+  if direction != directions.idle:
+    return true
+  
+  return false
+
+
+# handles the movement of the entity
+func move(delta : float) -> void:
+  var velocity : Vector2 = direction * TILE_SIZE
+
+  if direction != directions.idle:
+    entity.move_and_slide(velocity / delta, Vector2(0, 0))
+
+    # ensures that we're always snapped, otherwise can end up
+    # up off the grid based on collisions
+    entity.position = entity.position.snapped(Vector2(HALF_TILE, HALF_TILE))
+
+
+func set_direction(new_direction : String) -> Vector2:
+  direction = directions[new_direction]
+  return direction
+
+
+func get_direction() -> String:
+  return vector_direction(direction)
+
+
+# takes a Vector2 and returns the string representation of the vector.
 func vector_direction(vector : Vector2) -> String:
   var direction_vectors : Array = directions.values()
   var direction_names : Array = directions.keys()
@@ -23,19 +69,3 @@ func vector_direction(vector : Vector2) -> String:
     return ''
 
   return direction_names[new_direction]
-
-
-# Handles the movement of the entity.
-func movement(host, delta) -> void:
-  var motion : Vector2 = direction * TILE_SIZE
-
-  if direction != directions.idle:
-
-    host.move_and_slide(motion / delta, Vector2(0, 0))
-
-    # ensures that we're always snapped, otherwise can end up
-    # up off the grid based on collisions
-    host.position = host.position.snapped(Vector2(TILE_SIZE / 2, TILE_SIZE / 2))
-    print(host.position)
-
-
