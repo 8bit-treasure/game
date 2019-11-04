@@ -19,7 +19,7 @@ var entity : KinematicBody2D
 func _ready() -> void:
   entity = get_parent()
   HALF_TILE = TILE_SIZE / 2
-  entity.position = entity.position.snapped(Vector2(HALF_TILE, HALF_TILE))
+  entity.position = entity.position.snapped(Vector2(TILE_SIZE, TILE_SIZE)) - Vector2(HALF_TILE, HALF_TILE)
 
 
 # handles input for the entity
@@ -48,6 +48,7 @@ func move(delta : float) -> void:
     # ensures that we're always snapped, otherwise can end up
     # up off the grid based on collisions
     entity.position = entity.position.snapped(Vector2(HALF_TILE, HALF_TILE))
+    #print(entity.position)
 
 
 func set_direction(new_direction : String) -> Vector2:

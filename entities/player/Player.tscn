@@ -6,7 +6,7 @@
 [ext_resource path="res://entities/player/StateHandler.gd" type="Script" id=4]
 [ext_resource path="res://entities/states/Idle.gd" type="Script" id=5]
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 15 )
 
 [sub_resource type="Animation" id=2]
@@ -280,6 +280,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="LoadingCamera" type="Camera2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 vframes = 4
@@ -289,15 +295,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 18 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
