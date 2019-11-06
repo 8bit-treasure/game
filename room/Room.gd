@@ -42,22 +42,7 @@ func get_data():
 #	$WallMap.update_bitmask_region()
 	pass
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	#$WallMap.clear()
-	#var map_coords = $WallMap.world_to_map(Vector2(256, 0))
-	#print(map_coords)
-	#print($WallMap.get_cellv($WallMap.world_to_map(Vector2(96, 96))))
-	#$WallMap.set_cellv(map_coords, 7)
-	#$WallMap.set_cellv(map_coords - Vector2(0, 1), 7)
-	#$WallMap.update_bitmask_region()
-	#print($WallMap.tile_set.find_tile_by_name('Plains_Floor'))
-	#$WallMap.set_cellv(Vector2(-1, -1), 7)
-	
-	#get_data()
-	#request = get_data()
-	#data.resume()
-	#print('resumed')
+func render():
 	if global.terrain:
 		for x in range(19):
 			for y in range(13):
@@ -73,6 +58,11 @@ func _ready():
 				$WallMap.set_cellv(tile, tiles[global.terrain + '_Floor'])
 	
 		$WallMap.update_bitmask_region()
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	render()
+
 
 
 #func _on_HTTPRequest_request_completed( result, response_code, headers, body ):
