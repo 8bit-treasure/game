@@ -3,8 +3,14 @@ extends Area2D
 onready var scene_info : Array = self.name.split('_')
 onready var scene_name : String = scene_info[0]
 onready var scene_direction : String = scene_info[1]
-
 onready var new_scene : PackedScene = load(str('res://room/', scene_name, '.tscn'))
+
+var cardinal : Dictionary = {
+  'Down': 's',
+  'Left': 'w',
+  'Up': 'n',
+  'Right': 'e'
+}
 
 func _onready() -> void:
   global.load_direction = scene_direction
@@ -17,3 +23,9 @@ func _process(delta : float) -> void:
       print('new dir:', scene_direction)
       global.load_direction = scene_direction
       print(scene_info[0], ' ', scene_info[1])
+      var direction : String = cardinal[scene_direction]
+      
+      # push request to move this direction
+      print('current scene: ', get_tree().current_scene.name)
+      if get_tree().current_scene.name == 'Room':
+        global.move(direction)
