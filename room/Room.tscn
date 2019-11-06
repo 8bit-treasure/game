@@ -170,6 +170,8 @@ current = true
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 560, 368 )
 scale = Vector2( 2, 2 )
+z_index = 1
+collision/safe_margin = 0.05
 
 [node name="WallMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -184,6 +186,7 @@ scale = Vector2( 2, 2 )
 tile_set = SubResource( 7 )
 cell_size = Vector2( 32, 32 )
 format = 1
+tile_data = PoolIntArray( 131082, 7, 0, 196612, 8, 0, 196620, 4, 0, 458765, 6, 0 )
 
 [node name="Loaders" type="Node" parent="."]
 
