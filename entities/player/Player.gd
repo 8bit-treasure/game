@@ -13,6 +13,11 @@ func _ready() -> void:
 
   if global.load_direction == 'Up':
     position = Vector2(544, 672)
+  
+  # $StateHandler._update('loading')
+  print(get_parent().name)
+  if get_parent().name != 'Room':
+    $StateHandler._update('loading')
 
 
 func _physics_process(delta: float) -> void:

@@ -50,6 +50,15 @@ func move(delta : float) -> void:
     entity.position = entity.position.snapped(Vector2(HALF_TILE, HALF_TILE))
 
 
+func move_to(delta : float, target : Vector2, direction : String) -> bool:
+  set_direction(direction)
+  if entity.position == target:
+    return false
+  
+  move(delta)
+  return true
+
+
 func set_direction(new_direction : String) -> Vector2:
   direction = directions[new_direction]
   return direction
