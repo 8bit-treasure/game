@@ -10,13 +10,12 @@ signal data_loaded
 
 func _ready():
 	
-	response = request('https://lambda-treasure-hunt.herokuapp.com/api/adv/init/', 'METHOD_GET', {})
+	response = request('https://lambda-treasure-hunt.herokuapp.com/api/adv/init/', 'GET', {})
 	yield(self, 'data_loaded')
 	get_parent().get_node('Room').render()
 	pass
 
 func _request_done( result, response_code, headers, body ):
-	#print('\ndone done done\n')
 	var data = JSON.parse(body.get_string_from_utf8())
 	print(data.result)
 	exits = data.result.exits
@@ -31,6 +30,11 @@ func request(endpoint : String, method : String, body : Dictionary) -> void:
 	self.add_child(http_node)
 	http_node.set_owner(self)
 
+	var methods = {
+		'GET': HTTPClient.METHOD_GET,
+		'POST': HTTPClient.METHOD_POST,
+	}
+
 	#http_node.request(endpoint)
 
 	var data = JSON.print(body)
@@ -39,14 +43,15 @@ func request(endpoint : String, method : String, body : Dictionary) -> void:
 		"Authorization: Token ac6e9fac44b48a6974eb8add0a3715184057be52",
 		"Content-Type: application/json"
 	]
-	http_node.request(endpoint, headers, true, HTTPClient[method], data)
+
+	http_node.request(endpoint, headers, true, methods[method], data)
 
 
 func move(direction : String) -> void:
 	var body = {
 		'direction': direction
 	}
-	var response = request('https://lambda-treasure-hunt.herokuapp.com/api/adv/move/', 'METHOD_POST', body)
+	var response = request('https://lambda-treasure-hunt.herokuapp.com/api/adv/move/', 'POST', body)
 	
 	#print('request: ', direction)
 	pass

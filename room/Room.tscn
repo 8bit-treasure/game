@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://engine/SceneLoader.tscn" type="PackedScene" id=1]
-[ext_resource path="res://tiles/environment/WallTiles.tres" type="TileSet" id=2]
-[ext_resource path="res://tiles/items/Spritesheet_1_v2.png" type="Texture" id=3]
-[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://room/Room.gd" type="Script" id=5]
+[ext_resource path="res://room/Room.gd" type="Script" id=1]
+[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tiles/environment/WallTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://tiles/items/Spritesheet_1_v2.png" type="Texture" id=4]
+[ext_resource path="res://engine/SceneLoader.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -26,7 +26,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=7]
 0/name = "Spritesheet_1_v2.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 32, 32 )
@@ -36,7 +36,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "Spritesheet_1_v2.png 1"
-1/texture = ExtResource( 3 )
+1/texture = ExtResource( 4 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 32, 0, 32, 32 )
@@ -52,7 +52,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 } ]
 1/z_index = 0
 2/name = "Spritesheet_1_v2.png 2"
-2/texture = ExtResource( 3 )
+2/texture = ExtResource( 4 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 32, 32, 32 )
@@ -68,7 +68,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 } ]
 2/z_index = 0
 3/name = "Spritesheet_1_v2.png 3"
-3/texture = ExtResource( 3 )
+3/texture = ExtResource( 4 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 64, 32, 32, 32 )
@@ -84,7 +84,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 } ]
 3/z_index = 0
 4/name = "Spritesheet_1_v2.png 4"
-4/texture = ExtResource( 3 )
+4/texture = ExtResource( 4 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 64, 32, 32 )
@@ -94,7 +94,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 4/shapes = [  ]
 4/z_index = 0
 5/name = "Spritesheet_1_v2.png 5"
-5/texture = ExtResource( 3 )
+5/texture = ExtResource( 4 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 96, 32, 32 )
@@ -104,7 +104,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 5/shapes = [  ]
 5/z_index = 0
 6/name = "Spritesheet_1_v2.png 6"
-6/texture = ExtResource( 3 )
+6/texture = ExtResource( 4 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 128, 32, 32 )
@@ -114,7 +114,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 6/shapes = [  ]
 6/z_index = 0
 7/name = "Spritesheet_1_v2.png 7"
-7/texture = ExtResource( 3 )
+7/texture = ExtResource( 4 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 160, 32, 32 )
@@ -130,7 +130,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 } ]
 7/z_index = 0
 8/name = "Spritesheet_1_v2.png 8"
-8/texture = ExtResource( 3 )
+8/texture = ExtResource( 4 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 32, 64, 64, 64 )
@@ -146,7 +146,7 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 } ]
 8/z_index = 2
 9/name = "Spritesheet_1_v2.png 9"
-9/texture = ExtResource( 3 )
+9/texture = ExtResource( 4 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 32, 128, 64, 64 )
@@ -163,13 +163,13 @@ points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
 9/z_index = 2
 
 [node name="Room" type="Node2D"]
-script = ExtResource( 5 )
+script = ExtResource( 1 )
 
 [node name="MainCamera" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 560, 368 )
 scale = Vector2( 2, 2 )
 z_index = 1
@@ -178,7 +178,7 @@ collision/safe_margin = 0.05
 [node name="WallMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 z_index = -100
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
 format = 1
 
@@ -190,16 +190,16 @@ format = 1
 
 [node name="Loaders" type="Node" parent="."]
 
-[node name="HLoading_Right" parent="Loaders" instance=ExtResource( 1 )]
+[node name="HLoading_Right" parent="Loaders" instance=ExtResource( 5 )]
 position = Vector2( 1152, 352 )
 
-[node name="VLoading_Up" parent="Loaders" instance=ExtResource( 1 )]
+[node name="VLoading_Up" parent="Loaders" instance=ExtResource( 5 )]
 position = Vector2( 544, -64 )
 
-[node name="HLoading_Left" parent="Loaders" instance=ExtResource( 1 )]
+[node name="HLoading_Left" parent="Loaders" instance=ExtResource( 5 )]
 position = Vector2( -64, 352 )
 
-[node name="VLoading_Down" parent="Loaders" instance=ExtResource( 1 )]
+[node name="VLoading_Down" parent="Loaders" instance=ExtResource( 5 )]
 position = Vector2( 544, 768 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
